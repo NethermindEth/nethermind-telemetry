@@ -1,4 +1,6 @@
 # Nethermind telemetry
+ 
+Based on [parity-telemetry](https://github.com/energywebfoundation/parity-telemetry).
 
 Small NodeJS application to fetch information on new blocks from a Nethermind Ethereum node and pass it on to telegraf.
 
