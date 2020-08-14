@@ -1,0 +1,4 @@
+node_modules/
+output.pipe
+logger.txt
+package-lock.json

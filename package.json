@@ -1,0 +1,24 @@
+{
+  "name": "nethermind-telemetry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chalk": "^4.1.0",
+    "console-stamp": "^0.2.9",
+    "ethereumjs-blockstream": "^7.0.0",
+    "glob": "^7.1.6",
+    "node-fetch": "^2.6.0",
+    "observable-slim": "^0.1.5",
+    "web3": "^1.2.11",
+    "websocket": "^1.0.28"
+  }
+}
