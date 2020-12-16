@@ -1,29 +1,9 @@
 const axios = require('axios');
 const fs = require('fs');
 const WebSocketClient = require('websocket').client;
-const chalk = require('chalk');
-
-labelColorizer = (options) => {
-    return (input) => {
-        const label = input.slice(options.labelPrefix.length, -options.labelSuffix.length).toLowerCase();
-        return typeof options.colorFuncs[label] === 'function' ? options.colorFuncs[label](input) : input;
-    };
-}
 
 require('console-stamp')(console, {
-    pattern: 'dd/mm/yyyy HH:MM:ss.l', 
-    colors: {
-        label: labelColorizer({
-            labelPrefix: "[",
-            labelSuffix: "]",
-            colorFuncs: {
-                info: chalk.green,
-                warn: chalk.yellow,
-                error: chalk.red
-            }
-        }),
-        stamp: chalk.yellow
-    },
+    pattern: 'dd/mm/yyyy HH:MM:ss.l'
 });
 
 
@@ -70,7 +50,7 @@ ws.on('connect', function(connection) {
             const poll = (fn, time) => fn()
                 .then(sleep(time).then(() => poll(fn, time)))
 
-            poll(() => new Promise(() => connection.sendUTF("{\"method\":\"eth_getBlockByNumber\",\"params\": [\"latest\",false],\"id\":1,\"jsonrpc\":\"2.0\"}")), 1000)
+            poll(() => new Promise(() => connection.sendUTF("{\"method\":\"eth_getBlockByNumber\",\"params\": [\"latest\",false],\"id\":1,\"jsonrpc\":\"2.0\"}")), 3000)
         }
     }
 
